@@ -8,9 +8,17 @@ if (mysqli_connect_error()) {
 	die("Ошибка подключения к базе данных.");
 }
 
+// Удаление фильма
+if (@$_GET['action']=='delete') {
+	$query="DELETE FROM films WHERE id='".mysqli_real_escape_string($link,$_GET['id'])."'LIMIT 1";
+	mysqli_query($link,$query);
+
+	if (mysqli_affected_rows($link)>0) {
+		$resultInfo="Фильм был удален!";
+	}
+}
+
 //Save form data to DB
-$resultSuccess="";
-$resultError="";
 $errors=array();
 
 if (array_key_exists('newFilm',$_POST)) {
@@ -79,12 +87,16 @@ if ($result=mysqli_query($link,$query)) {
 <body class="index-page">
 	<div class="container user-content section-page">
 
-	<?php if ($resultSuccess !='') { ?>	
+	<?php if (@$resultSuccess !='') { ?>	
 		<div class="notify notify--success mb-20"><?=$resultSuccess?></div>	
 	<?php  } ?>
 
-	<?php if ($resultError !='' ) { ?>
-		<div class="notify notify--error"><?=$resultError?></div>	
+	<?php if (@$resultInfo !='') { ?>	
+		<div class="notify notify--update mb-20"><?=$resultInfo?></div>	
+	<?php  } ?>
+
+	<?php if (@$resultError !='' ) { ?>
+		<div class="notify notify--error mb-20"><?=$resultError?></div>	
 	<?php  } ?>
 
 		<div class="title-1">Фильмотека</div>	
@@ -93,7 +105,11 @@ if ($result=mysqli_query($link,$query)) {
 		foreach ($films as $key=>$film) {		
 		 ?>
 			<div class="card mb-20">
-				<h4 class="title-4"><?=$film['title']?></h4>
+				<div class="card__header">
+					<h4 class="title-4"><?=$film['title']?></h4>
+					<a href="?action=delete&id=<?=$film['id']?>" class="button button--removesmall">Удалить</a>
+				</div>
+				
 				<div class="badge"><?=$film['genre']?></div>
 				<div class="badge"><?=$film['year']?></div>
 			</div>
