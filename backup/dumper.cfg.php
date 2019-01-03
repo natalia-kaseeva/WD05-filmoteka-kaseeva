@@ -1,7 +1,7 @@
 <?php
 $this->SET = array(
 'last_action' => '0',
-'last_db_backup' => 'information_schema',
+'last_db_backup' => 'wd05-filmoteka-kaseeva',
 'tables' => '',
 'comp_method' => '1',
 'comp_level' => '7',

@@ -251,6 +251,7 @@ a.badge:active {
   border-radius: 22px;
   height: 2.75em;
   padding-top: 0.68em;
+  padding-bottom: 0.68em;
   padding-left: 1.25em;
   padding-right: 1.25em;
   color: #037EC6;
@@ -2582,13 +2583,8 @@ h3.main-page__aboutme {
 }
 
 .card__header {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
   display: flex;
   justify-content: space-between;
-  -ms-align-items: top;
   align-items: top;
 }
 
