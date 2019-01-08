@@ -3,7 +3,7 @@
 
 <div class="panel-holder mt-30 mb-40">
 	<div class="title-3 mt-0">Добавить фильм</div>
-	<form action="new.php" method="POST">
+	<form enctype="multipart/form-data" action="new.php" method="POST">
 
 		<?php 
 			if ( !empty($errors) ) {
@@ -23,7 +23,10 @@
 			</div>
 		</div>
 		<textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма"></textarea>
-		<input class="button" type="submit" name="newFilm" value="Добавить" />
+		<div class="mb-10">
+			<input type="file" name="photo">
+		</div>
+		<input class="button mt-10" type="submit" name="newFilm" value="Добавить" />
 	</form>
 </div>
 </div><!-- build:jsLibs js/libs.js -->
