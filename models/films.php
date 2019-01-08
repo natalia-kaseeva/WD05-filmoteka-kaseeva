@@ -15,12 +15,13 @@ function films_all($link) {
 	return $films;
 }
 
-function film_new($link,$title,$genre,$year) {
+function film_new($link,$title,$genre,$year,$description) {
 	// Запись данных в БД
-	$query="INSERT INTO films (title,genre,year) VALUES (
+	$query="INSERT INTO films (title,genre,year,description) VALUES (
 		'".mysqli_real_escape_string($link,$title)."',
 		'".mysqli_real_escape_string($link,$genre)."',
-		'".mysqli_real_escape_string($link,$year)."'
+		'".mysqli_real_escape_string($link,$year)."',
+		'".mysqli_real_escape_string($link,$description)."'
 		)";
 
 	//$result=mysqli_query($link,$query);
@@ -49,11 +50,12 @@ function get_film($link, $id){
 	return $film;
 }
 
-function film_update($link, $title, $genre, $year, $id){
+function film_update($link, $title, $genre, $year, $id,$description){
 	$query = "	UPDATE films 
 				SET title = '". mysqli_real_escape_string($link, $title) ."', 
 					genre = '". mysqli_real_escape_string($link, $genre) ."', 
-					year = '". mysqli_real_escape_string($link, $year) ."' 
+					year = '". mysqli_real_escape_string($link, $year) ."', 
+					description = '". mysqli_real_escape_string($link, $description) ."'
 					WHERE id = ".mysqli_real_escape_string($link, $id)." LIMIT 1";
 
 	if ( mysqli_query($link, $query) ) {
@@ -65,7 +67,17 @@ function film_update($link, $title, $genre, $year, $id){
 	return $result;
 }
 
+function film_delete($link, $id) {
+	$query = "DELETE FROM films WHERE id = ' " . mysqli_real_escape_string($link, $id ) . "' LIMIT 1";
+	mysqli_query($link, $query);
 
+	if ( mysqli_affected_rows($link) > 0 ) {
+		$result = true;
+	} else {
+		$result = false;
+	}
+	return $result;
+}
 
 
 

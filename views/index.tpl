@@ -15,5 +15,8 @@ foreach ($films as $key=>$film) {
 				
 		<div class="badge"><?=$film['genre']?></div>
 		<div class="badge"><?=$film['year']?></div>
+		<div class="mt-20">
+			<a href="single.php?id=<?=$film['id']?>"" class="button">Подробнее</a>
+		</div>
 	</div>
 <?php } ?>

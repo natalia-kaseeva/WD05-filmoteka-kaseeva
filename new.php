@@ -24,17 +24,18 @@ if (array_key_exists('newFilm',$_POST)) {
 
 	// Если ошщибок нет - сохраняем фильм
 	if (empty($errors)) {
-		$result=film_new($link,$_POST['title'],$_POST['genre'],$_POST['year']);
+		$result=film_new($link,$_POST['title'],$_POST['genre'],$_POST['year'],$_POST['description']);
 		if ($result) {
 		$resultSuccess="Фильм успешно добавлен!";
 		} else {
-			$resultError="Что то пошло не так. Добавьте фильм еще раз!";		
+			$resultError="Что-то пошло не так. Добавьте фильм еще раз!";		
 		}	
 	}
 
 }	
 
 include('views/head.tpl');
+include('views/notifications.tpl');
 include('views/new-film.tpl');
 include('views/footer.tpl');
 

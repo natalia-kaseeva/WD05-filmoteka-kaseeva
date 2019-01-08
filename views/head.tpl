@@ -19,6 +19,6 @@
 <body class="index-page">
 	<div class="container user-content section-page mt-30">
 		<div class="admin-nav mb-30">
-			<a href="index.php" class="admin-nav__link">Все фильмы</a>
-			<a href="new.php" class="admin-nav__link">Добавить новый фильм</a>	
+			<a href="index.php" class="button">Все фильмы</a>
+			<a href="new.php" class="button">Добавить новый фильм</a>	
 		</div>

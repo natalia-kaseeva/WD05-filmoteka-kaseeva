@@ -23,6 +23,7 @@
 				<input class="input" type="text" placeholder="2000" name="year" value="<?=$film['year']?>"/>
 			</div>
 		</div>
+		<textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма"><?=$film['description']?></textarea>
 		<input type="submit" class="button mt-30" value="Обновить" name="update-film">
 	</form>
 

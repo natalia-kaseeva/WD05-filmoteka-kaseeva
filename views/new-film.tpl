@@ -1,15 +1,3 @@
-<?php if (@$resultSuccess !='') { ?>	
-	<div class="notify notify--success mb-20"><?=$resultSuccess?></div>	
-<?php  } ?>
-
-<?php if (@$resultInfo !='') { ?>	
-	<div class="notify notify--update mb-20"><?=$resultInfo?></div>	
-<?php  } ?>
-
-<?php if (@$resultError !='' ) { ?>
-	<div class="notify notify--error mb-20"><?=$resultError?></div>	
-<?php  } ?>
-
 
 <h1 class="title-1 mt-30">Добавить новый фильм</h1>
 
@@ -33,7 +21,10 @@
 			<div class="col">
 				<div class="form-group"><label class="label">Год<input class="input" name="year" type="text" placeholder="Введите год выпуска" /></label></div>
 			</div>
-		</div><input class="button" type="submit" name="newFilm" value="Добавить" />
+
+		</div>
+		<textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма"></textarea>
+		<input class="button" type="submit" name="newFilm" value="Добавить" />
 	</form>
 </div>
 </div><!-- build:jsLibs js/libs.js -->
