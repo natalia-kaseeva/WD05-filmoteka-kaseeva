@@ -21,7 +21,6 @@
 			<div class="col">
 				<div class="form-group"><label class="label">Год<input class="input" name="year" type="text" placeholder="Введите год выпуска" /></label></div>
 			</div>
-
 		</div>
 		<textarea class="textarea mb-20" name="description" placeholder="Введите описание фильма"></textarea>
 		<input class="button" type="submit" name="newFilm" value="Добавить" />

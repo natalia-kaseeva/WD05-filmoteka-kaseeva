@@ -3,8 +3,18 @@
 <?php 
 foreach ($films as $key=>$film) {		
 	?>
+	
 	<div class="card mb-20">
-		<div class="card__header">
+		<!-- row -->
+		<div class="row">
+			<!-- col-4 -->
+			<div class="col-auto">
+				<img height="200" src="<?=HOST?>img/films-examples/min/<?=$film['photo']?>"  alt="<?=$film['title']?>">
+			</div>
+			<!-- //col-4 -->
+			<!-- col-8 -->
+			<div class="col">
+				<div class="card__header">
 			<h4 class="title-4"><?=$film['title']?></h4>
 			<div class="buttons">
 				<a href="edit.php?id=<?=$film['id']?>" class="button button--editsmall">
@@ -18,5 +28,9 @@ foreach ($films as $key=>$film) {
 		<div class="mt-20">
 			<a href="single.php?id=<?=$film['id']?>"" class="button">Подробнее</a>
 		</div>
+			</div>
+			<!-- //col-8 -->
+		</div>
+		<!-- //row -->
 	</div>
 <?php } ?>

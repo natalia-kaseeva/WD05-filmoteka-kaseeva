@@ -1,7 +1,6 @@
 <?php 
 
 //DB Connection
-
 require('config.php');
 require('database.php');
 $link=db_connect();
@@ -25,9 +24,5 @@ include('views/head.tpl');
 include('views/notifications.tpl');
 include('views/index.tpl');
 include('views/footer.tpl');
-
-
-
-
 
  ?>

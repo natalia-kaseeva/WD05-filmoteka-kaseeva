@@ -1,8 +1,16 @@
 <div class="title-1">Информация о фильме</div>	
 		
 <div class="card mb-20">
-	
-	<div class="card__header">
+	<!-- row -->
+	<div class="row">
+		<!-- col -->
+		<div class="col-auto">
+			<img src="<?=HOST?>img/films-examples/full/<?=$film['photo']?>"  alt="<?=$film['title']?>">
+		</div>
+		<!-- // col -->
+		<!--col-->
+		<div class="col">
+			<div class="card__header">
 		<h4 class="title-4"><?=$film['title']?></h4>
 		<div class="buttons">
 			<a href="edit.php?id=<?=$film['id']?>" class="button button--editsmall">
@@ -16,4 +24,8 @@
 	<div class="user-content">
 		<p><?=$film['description']?></p>
 	</div>
+		</div>
+		<!-- //col -->
+	</div>
+	<!-- //row -->
 </div>
