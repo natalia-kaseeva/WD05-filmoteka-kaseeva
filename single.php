@@ -14,15 +14,15 @@ if ( @$_GET['action'] == 'delete') {
 	if ( $reslut ) {
 		$resultInfo = "Фильм был удален!";
 	} else {
-		$resultError = "Что-то пошло не так.";
+		$resultError = "Что то пошло не так.";
 	}
 }
 
-$films=films_all($link);
+$film=get_film($link,$_GET['id']);
 
 include('views/head.tpl');
 include('views/notifications.tpl');
-include('views/index.tpl');
+include('views/film-single.tpl');
 include('views/footer.tpl');
 
  ?>
