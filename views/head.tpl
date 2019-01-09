@@ -20,8 +20,21 @@
 	<div class="container user-content section-page mt-30">
 		<div class="admin-nav mb-30">
 			<a href="index.php" class="button">Все фильмы</a>
-			<a href="new.php" class="button">Добавить новый фильм</a>
-			<a href="request.php" class="button">Указать информацию</a>	
+
+			<?php  if ( isAdmin() ) { ?>
+				<a href="new.php" class="button">Добавить новый фильм</a>
+			<?php } ?>
+
+			<?php  if ( !isAdmin() ) { ?>
+			<!--<a href="request.php" class="button">Указать информацию</a>-->
+			<a href="login.php" class="button">Вход для админа</a>
+			<?php } ?>
+			
+			<?php  if ( isAdmin() ) { ?>
+				<a href="logout.php?name=user-unset" class="button">Выход</a>
+			<?php }  ?>
+
+
 		</div>
 
 	<?php if ( isset($_COOKIE['user-name']) ) { ?>
