@@ -73,7 +73,6 @@ function film_new($link,$title,$genre,$year,$description) {
 	} else {
 		$result=false;
 	}
-
 	return $result;
 }
 

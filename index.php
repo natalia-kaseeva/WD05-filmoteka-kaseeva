@@ -1,7 +1,5 @@
 <?php 
 
-
-
 //DB Connection
 require('config.php');
 require('database.php');
