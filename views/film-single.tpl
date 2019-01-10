@@ -13,9 +13,13 @@
 			<div class="card__header">
 		<h4 class="title-4"><?=$film['title']?></h4>
 		<div class="buttons">
+
+		<?php  if ( isAdmin() ) { ?>
 			<a href="edit.php?id=<?=$film['id']?>" class="button button--editsmall">
 				Редактировать</a>
-			<a href="index.php?action=delete&id=<?=$film['id']?>" class="button button--removesmall">Удалить</a>			
+			<a href="index.php?action=delete&id=<?=$film['id']?>" class="button button--removesmall">Удалить</a>
+		<?php } ?>
+					
 		</div>
 	</div>
 			
